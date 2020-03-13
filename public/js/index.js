@@ -46,18 +46,29 @@ function renderReadItem(itemIndex) {
 	li.classList.add('article-read-link');
 
 	const a = document.createElement('a');
+	a.className = 'article-read';
 	a.href = '#';
 	a.textContent = articles[itemIndex].title;
 
 	li.append(a);
 
-	document.getElementById('articles-read').append(li);
+	document.getElementById('articles-read-list').append(li);
 }
 
 function setAttributes(el, attrs) {
 	for (var key in attrs) {
 		el.setAttribute(key, attrs[key]);
 	}
+}
+
+function renderRankingForm() {
+	const main = document.querySelector('main');
+	main.innerHTML = '';
+
+	const articlesReadSection = document.getElementById('articles-read');
+	articlesReadSection.innerHTML = '';
+
+	
 }
 
 function renderArticle(data, nextArticleIndex) {
@@ -123,11 +134,28 @@ function renderArticle(data, nextArticleIndex) {
 	}
 
 	if (nextArticleIndex === 0) {
+		const main = document.querySelector('main');
+
+		const rankArticlesBtn = document.createElement('button');
+		setAttributes(rankArticlesBtn, {
+			id: 'rank-articles-btn'
+		});
+		rankArticlesBtn.textContent = 'Rank Articles';
+		rankArticlesBtn.addEventListener('click', e => {
+			e.preventDefault();
+			renderRankingForm();
+		});
+
+		main.append(rankArticlesBtn);
+
+		renderReadItem(articles.length - 1);
+
 		return null;
 	}
 
 	renderReadItem(
 		nextArticleIndex === 0 ? articles.length - 1 : nextArticleIndex - 1
 	);
+	console.log(nextArticleIndex);
 	main.append(nextArticleBtn);
 }

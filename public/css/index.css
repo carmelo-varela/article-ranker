@@ -40,7 +40,7 @@ main > #article-title {
 	place-items: center center;
 }
 
-#next-article-btn {
+#next-article-btn, #rank-articles-btn {
 	background-color: var(--text-color);
 	text-decoration: none;
 	color: var(--primary-color);
