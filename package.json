@@ -1,0 +1,27 @@
+{
+  "name": "article-ranker",
+  "version": "1.0.0",
+  "description": " A news site that renders random articles, and has the ability for the user to rank the articles once they have read them all.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carmelo-varela/article-ranker.git"
+  },
+  "author": "Carmelo Varela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carmelo-varela/article-ranker/issues"
+  },
+  "homepage": "https://github.com/carmelo-varela/article-ranker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
